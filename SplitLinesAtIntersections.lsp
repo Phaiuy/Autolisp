@@ -99,8 +99,10 @@
             (progn
               (setq qi (nth 1 line-j)
                     qj (nth 2 line-j))
-              ;; inters voi tham so nil: chi tra ve khi diem nam tren CA 2 doan
-              (setq ipt (inters p1 p2 qi qj nil))
+              ;; Tham so cuoi = T: CHI tra ve giao diem khi no nam tren CA HAI
+              ;; doan that su. (Neu de nil -> coi la duong vo han -> sinh giao
+              ;; diem "ao" o phan keo dai, lam line bi dai ra va tao doan chong nhau.)
+              (setq ipt (inters p1 p2 qi qj T))
               (if ipt
                 (setq pts (cons ipt pts))))))
 
